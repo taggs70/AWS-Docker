@@ -63,7 +63,7 @@
 			</plugin>
 	        <plugin>
 	            <groupId>com.spotify</groupId>
-	            <artifactId>docker-maven-plugin</artifactId>
+	            <artifactId>docker-maven-plugin2</artifactId>
 	            <version>0.4.11</version>
 	            <configuration>
 	                <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
@@ -77,6 +77,28 @@
 	                </resources>
 	            </configuration>
 	        </plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.15.3</version>
+				<configuration>
+					<dockerHost>http://127.0.0.1:2375</dockerHost>
+					<verbose>true</verbose>
+					<images>
+						<image>
+							<name>taggs/springboot</name>
+							<build>
+								<dockerFile>Dockerfile</dockerFile>
+								<assembly>
+									<descriptorRef>artifact</descriptorRef>
+								</assembly>
+							</build>
+						</image>
+					</images>
+				</configuration>
+			</plugin>
+
+
 		</plugins>
 	</build>
 
