@@ -70,7 +70,7 @@
 					<verbose>true</verbose>
 					<images>
 						<image>
-							<name>taggs/springboot</name>
+							<name>taggs/springbootz</name>
 							<build>
 								<dockerFile>Dockerfile</dockerFile>
 								<assembly>
